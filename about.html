@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – Lumière Jewelry</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Lumière</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="category.html">Collections</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" onclick="toggleSearch()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+      <button class="icon-btn cart-btn" onclick="toggleCart()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="cart-count" id="cartCount">0</span></button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu"><a href="index.html">Home</a><a href="category.html">Collections</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+  <div class="search-bar" id="searchBar"><input type="text" placeholder="Search for jewelry…" id="searchInput"/><button onclick="toggleSearch()">✕</button></div>
+</nav>
+
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header"><h3>Your Cart</h3><button onclick="toggleCart()">✕</button></div>
+  <div class="cart-items" id="cartItems"><p class="cart-empty">Your cart is empty.</p></div>
+  <div class="cart-footer" id="cartFooter" style="display:none"><div class="cart-total">Total: $<span id="cartTotal">0</span></div><a href="#" class="btn-primary" style="display:block;text-align:center">Checkout</a></div>
+</div>
+
+
+<div class="page-header">
+  <div class="page-header-bg">
+    <div class="hero-shape s1" style="top:-20%;right:-10%;width:500px;height:500px;opacity:0.3"></div>
+    <div class="hero-shape s2" style="bottom:-20%;left:-5%;width:400px;height:400px;opacity:0.2"></div>
+  </div>
+  <div class="container">
+    <p class="section-eyebrow">Our Story</p>
+    <h1 class="page-title">About Lumière</h1>
+    <p class="page-subtitle">Where fine craftsmanship meets feminine power</p>
+  </div>
+</div>
+
+
+<section class="about-intro">
+  <div class="container">
+    <div class="about-intro-grid">
+      <div class="about-visual">
+        <div class="about-img-wrap">
+          <svg viewBox="0 0 340 420" xmlns="http://www.w3.org/2000/svg" width="100%">
+            <defs>
+              <radialGradient id="ag1" cx="50%" cy="40%" r="60%">
+                <stop offset="0%" stop-color="#f9f3eb"/>
+                <stop offset="100%" stop-color="#e8c99a" stop-opacity="0.5"/>
+              </radialGradient>
+              <linearGradient id="ag2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#c9a86c" stop-opacity="0.15"/>
+                <stop offset="100%" stop-color="#c9a86c" stop-opacity="0.4"/>
+              </linearGradient>
+            </defs>
+            <rect x="20" y="20" width="300" height="380" rx="12" fill="url(#ag1)"/>
+
+            <rect x="40" y="280" width="260" height="8" rx="4" fill="#c9a86c" opacity="0.3"/>
+            
+            <rect x="60" y="230" width="4" height="60" rx="2" fill="#c9a86c" opacity="0.5"/>
+            <ellipse cx="62" cy="228" rx="8" ry="5" fill="#c9a86c" opacity="0.4"/>
+            <rect x="85" y="245" width="4" height="45" rx="2" fill="#c9a86c" opacity="0.5"/>
+            <circle cx="87" cy="243" r="6" fill="none" stroke="#c9a86c" stroke-width="1.5" opacity="0.6"/>
+            
+            <circle cx="170" cy="200" r="35" fill="none" stroke="#c9a86c" stroke-width="3" opacity="0.8"/>
+            <circle cx="170" cy="200" r="25" fill="none" stroke="#c9a86c" stroke-width="1.5" opacity="0.4"/>
+            <circle cx="170" cy="165" r="8" fill="#e8c99a" stroke="#c9a86c" stroke-width="2"/>
+            <circle cx="170" cy="165" r="4" fill="#c9a86c"/>
+            
+            <polygon points="230,180 234,192 246,192 236,200 240,212 230,204 220,212 224,200 214,192 226,192" fill="#c9a86c" opacity="0.4"/>
+            <polygon points="110,160 113,170 123,170 115,176 118,186 110,180 102,186 105,176 97,170 107,170" fill="#c9a86c" opacity="0.3"/>
+            
+            <path d="M120 280 Q150 260 180 270 Q210 280 240 265" stroke="#c9a86c" stroke-width="2" fill="none" opacity="0.5" stroke-linecap="round"/>
+            
+            <text x="170" y="340" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="18" fill="#c9a86c" opacity="0.8">Handcrafted with love</text>
+            <text x="170" y="360" text-anchor="middle" font-family="Jost,sans-serif" font-size="11" fill="#c9a86c" opacity="0.5" letter-spacing="3">since 2010</text>
+            
+            <rect x="20" y="20" width="300" height="380" rx="12" fill="none" stroke="#c9a86c" stroke-width="1.5" opacity="0.3"/>
+          </svg>
+          <div class="about-badge-wrap">
+            <div class="about-badge">Est.<br/>2010</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-eyebrow">Who We Are</p>
+        <h2>Born From a<br/><em>Passion for Beauty</em></h2>
+        <p>Lumière was born in the cobblestone studios of Paris in 2010, when founder Elise Fontaine — a third-generation goldsmith — decided the world needed jewelry that felt as extraordinary as the women who would wear it.</p>
+        <p>Today, our collection spans over 248 unique handcrafted pieces, each telling a story of artistry, intention, and timeless elegance. We believe that fine jewelry is not a luxury reserved for the few — it is a right of every woman who dares to feel extraordinary.</p>
+        <p>Every Lumière piece passes through the hands of at least five master artisans before it reaches yours. We source only ethically certified gemstones and recycled metals, because beauty should never come at someone else's expense.</p>
+        <a href="category.html" class="btn-primary" style="margin-top:1rem;display:inline-block">Explore Our Pieces</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">15+</span>
+        <span class="stat-label">Years of Craftsmanship</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">248</span>
+        <span class="stat-label">Unique Designs</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">50k+</span>
+        <span class="stat-label">Happy Customers</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">28</span>
+        <span class="stat-label">Countries Delivered</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="values-section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">What Drives Us</p>
+      <h2 class="section-title">Our Values</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-num">01</div>
+        <h3>Artisanal Craftsmanship</h3>
+        <p>Every piece is hand-finished by master jewelers with decades of experience. No shortcuts, no mass production — only genuine artistry.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">02</div>
+        <h3>Ethical Sourcing</h3>
+        <p>We are committed to 100% conflict-free gemstones and recycled precious metals. Our planet matters as much as your jewelry.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">03</div>
+        <h3>Timeless Design</h3>
+        <p>We design pieces that transcend trends. Lumière jewelry is meant to be worn for a lifetime — and passed down as heirloom.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">04</div>
+        <h3>Woman-First Philosophy</h3>
+        <p>We design for real women — every shape, every occasion, every story. Our collections celebrate the full spectrum of femininity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="team-section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">The People Behind the Pieces</p>
+      <h2 class="section-title">Meet Our Team</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">
+          <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+            <defs><radialGradient id="t1" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#f5e6d3"/><stop offset="100%" stop-color="#c8a882"/></radialGradient></defs>
+            <ellipse cx="60" cy="140" rx="50" ry="30" fill="url(#t1)" opacity="0.6"/>
+            <circle cx="60" cy="55" r="32" fill="url(#t1)"/>
+            <path d="M20 110 Q60 90 100 110 L110 140 Q60 160 10 140Z" fill="url(#t1)"/>
+          </svg>
+        </div>
+        <h3>Elise Fontaine</h3>
+        <p class="team-role">Founder & Creative Director</p>
+        <p class="team-bio">Third-generation goldsmith with over 20 years of experience in Parisian fine jewelry ateliers.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="--av-color: #d4b896">
+          <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+            <defs><radialGradient id="t2" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#ece0d0"/><stop offset="100%" stop-color="#b89470"/></radialGradient></defs>
+            <ellipse cx="60" cy="140" rx="50" ry="30" fill="url(#t2)" opacity="0.6"/>
+            <circle cx="60" cy="55" r="32" fill="url(#t2)"/>
+            <path d="M20 110 Q60 90 100 110 L110 140 Q60 160 10 140Z" fill="url(#t2)"/>
+          </svg>
+        </div>
+        <h3>Isabelle Moreau</h3>
+        <p class="team-role">Head Gemologist</p>
+        <p class="team-bio">GIA-certified gemologist who has personally sourced rare stones from over 15 countries worldwide.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">
+          <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+            <defs><radialGradient id="t3" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#f9eedd"/><stop offset="100%" stop-color="#cfa97a"/></radialGradient></defs>
+            <ellipse cx="60" cy="140" rx="50" ry="30" fill="url(#t3)" opacity="0.6"/>
+            <circle cx="60" cy="55" r="32" fill="url(#t3)"/>
+            <path d="M20 110 Q60 90 100 110 L110 140 Q60 160 10 140Z" fill="url(#t3)"/>
+          </svg>
+        </div>
+        <h3>Sophie Laurent</h3>
+        <p class="team-role">Lead Designer</p>
+        <p class="team-bio">Former fashion designer turned jewelry visionary, blending couture sensibility with wearable elegance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="process-section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">How It's Made</p>
+      <h2 class="section-title">Our Process</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-icon">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="28" stroke="#c9a86c" stroke-width="1.5" opacity="0.3"/>
+            <path d="M20 35 Q30 15 40 35" stroke="#c9a86c" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="30" cy="38" r="4" fill="#c9a86c" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="process-num">01</div>
+        <h4>Design & Sketch</h4>
+        <p>Every piece begins as a hand-drawn sketch inspired by nature, architecture, and feminine form.</p>
+      </div>
+      <div class="process-connector"></div>
+      <div class="process-step">
+        <div class="process-icon">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="28" stroke="#c9a86c" stroke-width="1.5" opacity="0.3"/>
+            <rect x="18" y="22" width="24" height="16" rx="3" stroke="#c9a86c" stroke-width="2"/>
+            <path d="M24 22v-4M36 22v-4" stroke="#c9a86c" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="process-num">02</div>
+        <h4>Stone Selection</h4>
+        <p>Our gemologist hand-picks each stone for cut, clarity, and character. Only the finest make the cut.</p>
+      </div>
+      <div class="process-connector"></div>
+      <div class="process-step">
+        <div class="process-icon">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="28" stroke="#c9a86c" stroke-width="1.5" opacity="0.3"/>
+            <circle cx="30" cy="30" r="12" stroke="#c9a86c" stroke-width="2"/>
+            <path d="M30 18v-4M30 46v-4M18 30h-4M46 30h-4" stroke="#c9a86c" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="process-num">03</div>
+        <h4>Handcrafting</h4>
+        <p>Master artisans shape, set, and polish each piece by hand — a process that takes days, not minutes.</p>
+      </div>
+      <div class="process-connector"></div>
+      <div class="process-step">
+        <div class="process-icon">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="28" stroke="#c9a86c" stroke-width="1.5" opacity="0.3"/>
+            <path d="M20 30l7 7 13-14" stroke="#c9a86c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="process-num">04</div>
+        <h4>Quality Assurance</h4>
+        <p>Five rounds of quality inspection before packaging in our signature luxury box, ready for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="about-cta">
+  <div class="container">
+    <div class="about-cta-inner">
+      <p class="section-eyebrow" style="color:#e8c99a">Ready to Find Your Piece?</p>
+      <h2>Start Your<br/><em>Lumière Story</em></h2>
+      <p>Browse our latest collections and find the piece that speaks to you.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem">
+        <a href="category.html" class="btn-primary">Shop Now</a>
+        <a href="contact.html" class="btn-ghost" style="border-color:rgba(255,255,255,0.4);color:#fff">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Lumière</a>
+        <p>Fine jewelry for the modern woman.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Shop</h4><ul><li><a href="category.html?cat=rings">Rings</a></li><li><a href="category.html?cat=necklaces">Necklaces</a></li><li><a href="category.html?cat=earrings">Earrings</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Help</h4><ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Lumière Jewelry. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="products.js"></script>
+<script src="cart.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

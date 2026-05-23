@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Collections – Lumière Jewelry</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+
+    <nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Lumière</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="category.html" class="active">Collections</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" onclick="toggleSearch()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="icon-btn cart-btn" onclick="toggleCart()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="category.html">Collections</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="search-bar" id="searchBar">
+    <input type="text" placeholder="Search for jewelry…" id="searchInput" oninput="liveSearch(this.value)"/>
+    <button onclick="toggleSearch()">✕</button>
+  </div>
+</nav>
+
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header"><h3>Your Cart</h3><button onclick="toggleCart()">✕</button></div>
+  <div class="cart-items" id="cartItems"><p class="cart-empty">Your cart is empty.</p></div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-total">Total: $<span id="cartTotal">0</span></div>
+    <a href="#" class="btn-primary" style="display:block;text-align:center">Checkout</a>
+  </div>
+</div>
+
+
+<div class="page-header">
+  <div class="page-header-bg">
+    <div class="hero-shape s1" style="top:-20%;right:-10%;width:500px;height:500px;opacity:0.3"></div>
+    <div class="hero-shape s2" style="bottom:-20%;left:-5%;width:400px;height:400px;opacity:0.2"></div>
+  </div>
+  <div class="container">
+    <p class="section-eyebrow">Explore Our</p>
+    <h1 class="page-title">Collections</h1>
+    <p class="page-subtitle">Discover 248 handcrafted pieces across 5 collections</p>
+  </div>
+</div>
+
+
+<section class="shop-section">
+  <div class="container">
+    <div class="shop-layout">
+
+        <aside class="filters-sidebar">
+        <div class="filter-group">
+          <h4>Category</h4>
+          <label class="filter-check"><input type="checkbox" value="rings" onchange="filterProducts()"/> Rings <span>48</span></label>
+          <label class="filter-check"><input type="checkbox" value="necklaces" onchange="filterProducts()"/> Necklaces <span>62</span></label>
+          <label class="filter-check"><input type="checkbox" value="earrings" onchange="filterProducts()"/> Earrings <span>74</span></label>
+          <label class="filter-check"><input type="checkbox" value="bracelets" onchange="filterProducts()"/> Bracelets <span>39</span></label>
+          <label class="filter-check"><input type="checkbox" value="sets" onchange="filterProducts()"/> Sets <span>25</span></label>
+        </div>
+        <div class="filter-group">
+          <h4>Material</h4>
+          <label class="filter-check"><input type="checkbox" value="gold" onchange="filterProducts()"/> 18k Gold</label>
+          <label class="filter-check"><input type="checkbox" value="rose-gold" onchange="filterProducts()"/> Rose Gold</label>
+          <label class="filter-check"><input type="checkbox" value="silver" onchange="filterProducts()"/> Sterling Silver</label>
+          <label class="filter-check"><input type="checkbox" value="platinum" onchange="filterProducts()"/> Platinum</label>
+        </div>
+        <div class="filter-group">
+          <h4>Price Range</h4>
+          <div class="price-inputs">
+            <input type="number" placeholder="Min" id="priceMin" onchange="filterProducts()"/>
+            <span>–</span>
+            <input type="number" placeholder="Max" id="priceMax" onchange="filterProducts()"/>
+          </div>
+        </div>
+        <div class="filter-group">
+          <h4>Gemstone</h4>
+          <label class="filter-check"><input type="checkbox" value="diamond"/> Diamond</label>
+          <label class="filter-check"><input type="checkbox" value="ruby"/> Ruby</label>
+          <label class="filter-check"><input type="checkbox" value="sapphire"/> Sapphire</label>
+          <label class="filter-check"><input type="checkbox" value="emerald"/> Emerald</label>
+          <label class="filter-check"><input type="checkbox" value="pearl"/> Pearl</label>
+        </div>
+        <button class="btn-ghost" style="width:100%;margin-top:0.5rem" onclick="resetFilters()">Clear Filters</button>
+      </aside>
+
+
+      <div class="shop-main">
+        <div class="shop-toolbar">
+          <p id="productCount">Showing all products</p>
+          <div class="toolbar-right">
+            <select id="sortSelect" onchange="sortProducts(this.value)">
+              <option value="default">Sort: Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name">Name: A–Z</option>
+              <option value="new">Newest First</option>
+            </select>
+            <div class="view-toggle">
+              <button class="view-btn active" onclick="setView('grid',this)" title="Grid">
+                <svg width="16" height="16" viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6" rx="1" fill="currentColor"/><rect x="9" y="1" width="6" height="6" rx="1" fill="currentColor"/><rect x="1" y="9" width="6" height="6" rx="1" fill="currentColor"/><rect x="9" y="9" width="6" height="6" rx="1" fill="currentColor"/></svg>
+              </button>
+              <button class="view-btn" onclick="setView('list',this)" title="List">
+                <svg width="16" height="16" viewBox="0 0 16 16"><rect x="1" y="2" width="14" height="3" rx="1" fill="currentColor"/><rect x="1" y="7" width="14" height="3" rx="1" fill="currentColor"/><rect x="1" y="12" width="14" height="3" rx="1" fill="currentColor"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cat-pills">
+          <button class="cat-pill active" onclick="filterCat('all',this)">All</button>
+          <button class="cat-pill" onclick="filterCat('rings',this)">Rings</button>
+          <button class="cat-pill" onclick="filterCat('necklaces',this)">Necklaces</button>
+          <button class="cat-pill" onclick="filterCat('earrings',this)">Earrings</button>
+          <button class="cat-pill" onclick="filterCat('bracelets',this)">Bracelets</button>
+          <button class="cat-pill" onclick="filterCat('sets',this)">Sets</button>
+        </div>
+        <div class="products-grid" id="shopProducts"></div>
+        <div class="load-more-wrap">
+          <button class="btn-ghost" id="loadMoreBtn" onclick="loadMore()">Load More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Lumière</a>
+        <p>Fine jewelry for the modern woman.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Shop</h4><ul><li><a href="category.html?cat=rings">Rings</a></li><li><a href="category.html?cat=necklaces">Necklaces</a></li><li><a href="category.html?cat=earrings">Earrings</a></li><li><a href="category.html?cat=bracelets">Bracelets</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>Help</h4><ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">Size Guide</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Lumière Jewelry. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="products.js"></script>
+<script src="cart.js"></script>
+<script src="main.js"></script>
+<script>
+  let currentCat = 'all';
+  let visibleCount = 8;
+
+  function initShop() {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat');
+    if (cat) {
+      currentCat = cat;
+      document.querySelectorAll('.cat-pill').forEach(p => {
+        p.classList.toggle('active', p.textContent.toLowerCase() === cat);
+      });
+    }
+    renderShop();
+  }
+
+  function renderShop() {
+    let prods = getProducts();
+    if (currentCat !== 'all') prods = prods.filter(p => p.category === currentCat);
+    const total = prods.length;
+    const visible = prods.slice(0, visibleCount);
+    renderProducts('shopProducts', visible);
+    document.getElementById('productCount').textContent = `Showing ${visible.length} of ${total} products`;
+    document.getElementById('loadMoreBtn').style.display = visibleCount >= total ? 'none' : 'inline-block';
+  }
+
+  function filterCat(cat, btn) {
+    currentCat = cat;
+    visibleCount = 8;
+    document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    renderShop();
+  }
+
+  function sortProducts(val) {
+    renderShop();
+  }
+
+  function filterProducts() { renderShop(); }
+  function resetFilters() {
+    document.querySelectorAll('.filter-check input').forEach(i => i.checked = false);
+    document.getElementById('priceMin').value = '';
+    document.getElementById('priceMax').value = '';
+    renderShop();
+  }
+
+  function loadMore() {
+    visibleCount += 4;
+    renderShop();
+  }
+
+  function setView(type, btn) {
+    document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const grid = document.getElementById('shopProducts');
+    grid.classList.toggle('list-view', type === 'list');
+  }
+
+  function liveSearch(val) {
+    const prods = getProducts().filter(p => p.name.toLowerCase().includes(val.toLowerCase()) || p.category.toLowerCase().includes(val.toLowerCase()));
+    renderProducts('shopProducts', prods);
+  }
+
+  initShop();
+</script>
+</body>
+</html>
